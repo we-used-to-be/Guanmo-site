@@ -8,12 +8,12 @@ export function AiSection() {
 
   return (
     <section className="story-section ai-section">
-      <div className="section-index">02</div>
+      <div className="section-index">03</div>
       <div className="section-grid section-grid--ai">
         <Reveal className="section-intro">
           <p className="section-kicker">选中 / ASK</p>
           <h2>选中即洞察</h2>
-          <p>选中文本，马上提问。AI 只在你需要它时出现，帮你把上下文接起来。</p>
+          <p>选中文本，右键添加，马上提问。让 AI 读取选区内容与选区上下文，对目标进行解释或修改。</p>
         </Reveal>
 
         <div className="selection-stage">
@@ -26,7 +26,7 @@ export function AiSection() {
             </p>
             <div className="margin-note">
               <span className="margin-note-line" />
-              <span>选中文本，<br />马上提问</span>
+              <span>选中文本，<br />右键添加</span>
             </div>
           </Reveal>
         </div>

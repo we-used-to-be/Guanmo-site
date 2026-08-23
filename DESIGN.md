@@ -30,6 +30,7 @@ Typography uses `Noto Serif SC` / Songti-style faces for display and `Noto Sans 
 - Mobile navigation is a semantic button with `aria-expanded` and a visible focus ring.
 - FAQ rows are keyboard-operable buttons with `aria-expanded` and animated disclosure.
 - Scroll motion is progressive enhancement only; reduced-motion users receive the same content without travel.
+- A click emits a small solid-petal fireworks bloom from the pointer location, then disappears; it is decorative and disabled for reduced-motion users.
 - No claim is made that Guanmo never sends content off-device; FAQ language follows the current project privacy policy.
 
 ## Asset rule

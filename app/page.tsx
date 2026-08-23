@@ -1,6 +1,8 @@
 import { AiSection } from "@/components/site/ai-section";
+import { ClickBloom } from "@/components/site/click-bloom";
 import { FaqSection } from "@/components/site/faq-section";
 import { Footer } from "@/components/site/footer";
+import { FullscreenSection } from "@/components/site/fullscreen-section";
 import { Hero } from "@/components/site/hero";
 import { LocalSection } from "@/components/site/local-section";
 import { Navbar } from "@/components/site/navbar";
@@ -29,6 +31,7 @@ export default function Home() {
       <Hero />
       <div className="story">
         <ReadingSection />
+        <FullscreenSection />
         <AiSection />
         <LocalSection />
         <SyntaxSection />
@@ -36,6 +39,7 @@ export default function Home() {
       </div>
       <Footer />
       </main>
+      <ClickBloom />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </>
   );

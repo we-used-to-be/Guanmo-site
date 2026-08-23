@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "motion/react";
 
 const downloadUrl = "https://github.com/we-used-to-be/Guanmo-open/releases/latest";
 const githubUrl = "https://github.com/we-used-to-be/Guanmo-open";
+const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function Hero() {
   const reduced = useReducedMotion();
@@ -38,7 +39,7 @@ export function Hero() {
       <motion.div className="hero-screenshot-wrap" initial={{ opacity: 0, y: reduced ? 0 : 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduced ? 0 : 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}>
         <Image
           className="hero-screenshot"
-          src="/assets/guanmo-main-warm.png"
+          src={`${assetBasePath}/assets/guanmo-main-warm.png`}
           alt="观墨暖色主题主界面，展示 Markdown 阅读与 AI 助手"
           width={2878}
           height={1697}
@@ -46,7 +47,7 @@ export function Hero() {
         />
       </motion.div>
 
-      <p className="hero-note">Windows 预编译版本 · Web 基础 Markdown 阅读与编辑</p>
+      <p className="hero-note">Windows 预编译版本 · 长文档虚拟化预览 · F11 全屏阅读 · AI 即选即问</p>
     </section>
   );
 }

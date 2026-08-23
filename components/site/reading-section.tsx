@@ -8,8 +8,7 @@ export function ReadingSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
-  const lineWidth = useTransform(scrollYProgress, [0.08, 0.8], ["8%", "100%"]);
-  const dotLeft = useTransform(scrollYProgress, [0.08, 0.8], ["8%", "100%"]);
+  const viewportTop = useTransform(scrollYProgress, [0.08, 0.8], ["8%", "62%"]);
 
   return (
     <section className="story-section reading-section" id="features" ref={sectionRef}>
@@ -17,30 +16,39 @@ export function ReadingSection() {
       <div className="section-grid">
         <Reveal className="section-intro">
           <p className="section-kicker">阅读 / FOCUS</p>
-          <h2>阅读，<br />从一条线开始</h2>
-          <p>横向展开，专注当下。让目录、长文档和阅读位置都保持清晰。</p>
+          <h2>长文档，<br />也能读得轻松</h2>
+          <p>全文先建立预览模型，只挂载视区附近的内容。首屏 DOM 不随文档长度线性增长，滚动时局部块按需更新。</p>
         </Reveal>
 
-        <div className="reading-stage" aria-label="阅读进度动效示意">
+        <div className="reading-stage reading-stage--virtual" aria-label="虚拟化预览局部渲染示意">
           <Reveal delay={0.1}>
-            <div className="reading-stage-heading">
-              <span className="syntax-mark">#</span>
-              <span>把注意力留给内容</span>
+            <div className="virtual-stage-meta">
+              <span><i className="virtual-status-dot" />MarkdownPreviewModel</span>
+              <span>全文结构 / blocks</span>
             </div>
-            <div className="reading-stage-copy">
-              <span>真正的生产力，</span>
-              <span className="reading-highlight">来自对注意力的分配。</span>
+            <div className="virtual-stage">
+              <div className="virtual-model-column" aria-hidden="true">
+                <span className="virtual-model-label">FULL DOCUMENT</span>
+                {Array.from({ length: 12 }, (_, index) => (
+                  <span className="virtual-model-line" key={index} style={{ width: `${54 + ((index * 17) % 39)}%` }} />
+                ))}
+              </div>
+              <motion.div className="virtual-viewport" style={{ top: reduced ? "62%" : viewportTop }}>
+                <span className="virtual-viewport-label">VISIBLE RANGE</span>
+                <span className="virtual-visible-block virtual-visible-block--heading" />
+                <span className="virtual-visible-block" />
+                <span className="virtual-visible-block virtual-visible-block--short" />
+              </motion.div>
+              <div className="virtual-side-note">
+                <span className="virtual-side-rule" />
+                <span>只渲染可视区<br />附近的块</span>
+              </div>
+            </div>
+            <div className="virtual-stage-readout">
+              <span>model → viewport → local render</span>
+              <span>overscan: nearby blocks</span>
             </div>
           </Reveal>
-          <div className="progress-rail" aria-hidden="true">
-            <motion.div className="progress-rail-fill" style={{ width: lineWidth }} />
-            <motion.span className="progress-dot" style={{ left: reduced ? "100%" : dotLeft }} />
-          </div>
-          <div className="reading-outline" aria-hidden="true">
-            <span># 章节标题</span>
-            <span>## 小节标题</span>
-            <span>### 更小的标题</span>
-          </div>
         </div>
       </div>
     </section>

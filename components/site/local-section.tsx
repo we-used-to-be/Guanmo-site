@@ -14,7 +14,7 @@ const localItems = [
 export function LocalSection() {
   return (
     <section className="story-section local-section">
-      <div className="section-index">03</div>
+      <div className="section-index">04</div>
       <div className="section-grid section-grid--local">
         <Reveal className="section-intro">
           <p className="section-kicker">本地 / OPEN</p>

@@ -14,7 +14,7 @@ export function SyntaxSection() {
 
   return (
     <section className="story-section syntax-section" ref={sectionRef}>
-      <div className="section-index">04</div>
+      <div className="section-index">05</div>
       <div className="section-grid section-grid--syntax">
         <Reveal className="section-intro">
           <p className="section-kicker">语法 / NATIVE</p>

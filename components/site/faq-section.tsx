@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Reveal } from "./reveal";
 
 const faqs = [
-  { question: "观墨和 Typora / VS Code 有什么区别？", answer: "观墨更专注于 Markdown 的阅读与理解：它保留编辑能力，同时提供全屏阅读、预览内编辑、选区提问、知识库和阅读成果整理。" },
+  { question: "观墨更适合阅读还是写作？", answer: "Guanmo 更倾向于优化 Markdown 的阅读与理解体验，同时保留基础的 Markdown 撰写与导出能力。如果你追求更便捷的专注写作，可以考虑 Typora；如果你需要更全面的知识组织与连接，可以考虑 Obsidian。" },
   { question: "观墨免费吗？", answer: "观墨是 MIT 许可证下的开源项目。Windows 安装包可以从 GitHub Releases 获取。" },
   { question: "支持本地 AI 模型吗？", answer: "支持。观墨支持 OpenAI 兼容接口，也可以配置 Ollama 等本地模型服务。" },
   { question: "我的文档会上传到观墨服务器吗？", answer: "观墨开发者不运营接收用户文档、知识库或聊天内容的服务器。使用远程 AI、Embedding 或联网搜索时，请求所需内容会发送给你选择的服务商；Markdown 本地阅读与编辑不依赖这些服务。" },
@@ -18,7 +18,7 @@ export function FaqSection() {
 
   return (
     <section className="story-section faq-section" id="faq">
-      <div className="section-index">05</div>
+      <div className="section-index">06</div>
       <div className="faq-layout">
         <Reveal className="section-intro">
           <p className="section-kicker">常见问题 / FAQ</p>

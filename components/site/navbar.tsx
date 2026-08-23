@@ -9,6 +9,7 @@ const links = [
   { label: "GitHub", href: "https://github.com/we-used-to-be/Guanmo-open", external: true },
   { label: "下载", href: "https://github.com/we-used-to-be/Guanmo-open/releases/latest", external: true },
 ];
+const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +26,7 @@ export function Navbar() {
     <header className={`site-nav ${scrolled ? "site-nav--scrolled" : ""}`}>
       <div className="nav-inner">
         <a className="brand" href="#top" aria-label="观墨 Guanmo 首页">
-          <Image src="/assets/guanmo-icon.png" alt="" width={34} height={34} priority />
+          <Image src={`${assetBasePath}/assets/guanmo-icon.png`} alt="" width={34} height={34} priority />
           <span>观墨</span>
           <small>Guanmo</small>
         </a>

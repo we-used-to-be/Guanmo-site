@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "一个让 Markdown 更易阅读、更易理解、更易创作的开源桌面应用。",
     images: ["/assets/guanmo-main-warm.png"],
   },
-  icons: { icon: "/assets/guanmo-icon.png" },
+  icons: { icon: "assets/guanmo-icon.png" },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
