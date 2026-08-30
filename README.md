@@ -19,9 +19,9 @@ npx tsc --noEmit
 npm run build
 ```
 
-`npm run build` 会生成可部署到静态托管的 `out/` 目录。GitHub Pages 使用项目站点路径构建时，设置 `NEXT_PUBLIC_BASE_PATH=/Guanmo-page`；仓库内的 Actions 工作流已配置好该变量与 Pages artifact 部署。
+`npm run build` 会生成可部署到静态托管的 `out/` 目录。GitHub Pages 使用项目站点路径构建时，设置 `NEXT_PUBLIC_BASE_PATH=/Guanmo-site`；仓库内的 Actions 工作流已配置好该变量与 Pages artifact 部署。
 
-首次启用时，请在 GitHub 仓库的 Settings → Pages → Build and deployment 中将 Source 设为 GitHub Actions。推送 `master` 后，工作流会自动发布到 `https://we-used-to-be.github.io/Guanmo-page/`。
+首次启用时，请在 GitHub 仓库的 Settings → Pages → Build and deployment 中将 Source 设为 GitHub Actions。推送 `master` 后，工作流会自动发布到 `https://we-used-to-be.github.io/Guanmo-site/`。
 
 设计锁定与视觉验收记录见 [`DESIGN.md`](./DESIGN.md) 和 [`design-qa.md`](./design-qa.md)。
 

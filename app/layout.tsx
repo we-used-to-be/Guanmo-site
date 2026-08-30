@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://we-used-to-be.github.io/Guanmo-page/"),
+  metadataBase: new URL("https://we-used-to-be.github.io/Guanmo-site/"),
   title: "观墨 Guanmo · Markdown 阅读体验",
   description: "一个让 Markdown 更易阅读、更易理解、更易创作的开源桌面应用。",
   alternates: { canonical: "./" },
