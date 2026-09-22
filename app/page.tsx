@@ -7,6 +7,7 @@ import { Hero } from "@/components/site/hero";
 import { LocalSection } from "@/components/site/local-section";
 import { Navbar } from "@/components/site/navbar";
 import { ReadingSection } from "@/components/site/reading-section";
+import { ArtifactsSection } from "@/components/site/artifacts-section";
 import { SyntaxSection } from "@/components/site/syntax-section";
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
         <ReadingSection />
         <FullscreenSection />
         <AiSection />
+        <ArtifactsSection />
         <LocalSection />
         <SyntaxSection />
         <FaqSection />

@@ -18,7 +18,7 @@ export function FaqSection() {
 
   return (
     <section className="story-section faq-section" id="faq">
-      <div className="section-index">06</div>
+      <div className="section-index">07</div>
       <div className="faq-layout">
         <Reveal className="section-intro">
           <p className="section-kicker">常见问题 / FAQ</p>

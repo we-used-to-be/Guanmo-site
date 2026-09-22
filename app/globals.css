@@ -171,6 +171,17 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--teal); outline-
 .selection-highlight { color: var(--ink); background-image: linear-gradient(var(--teal-soft), var(--teal-soft)); background-repeat: no-repeat; background-position: 0 86%; background-size: 0% 42%; }
 .margin-note { display: flex; align-items: center; gap: 14px; margin: 16px 0 0 24%; color: var(--teal); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; line-height: 1.7; }
 .margin-note-line { display: block; width: 92px; height: 1px; background: var(--teal); transform: rotate(22deg); transform-origin: right center; }
+.section-grid--artifacts { align-items: center; }
+.artifacts-stage { align-self: center; border-top: 1px solid var(--paper-line); }
+.artifacts-essay { position: relative; padding: 30px 0 45px; }
+.artifacts-essay-label { margin: 0; color: var(--teal); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 10px; letter-spacing: .08em; }
+.artifacts-essay blockquote { max-width: 570px; margin: 30px 0 0; color: var(--umber); font-family: "Songti SC", "STSong", "Noto Serif SC", serif; font-size: clamp(25px, 3vw, 38px); line-height: 1.7; letter-spacing: -.045em; }
+.artifacts-essay mark { padding: 0 2px; background: linear-gradient(transparent 57%, var(--teal-soft) 57%); color: inherit; }
+.artifacts-margin-note { width: fit-content; margin: 20px 0 0 auto; padding: 0 0 0 14px; border-left: 1px solid var(--teal); color: var(--ink-soft); font-size: 13px; line-height: 1.6; }
+.artifacts-margin-note span { display: block; margin-bottom: 4px; color: var(--teal); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 10px; }
+.artifacts-index { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding: 17px 0 0; border-top: 1px solid var(--paper-line); }
+.artifacts-index span { color: var(--umber); font-size: 13px; font-weight: 600; }
+.artifacts-index p { margin: 0; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
 .section-grid--local { align-items: start; }
 .local-path { position: relative; padding: 6px 0 0 30px; }
 .local-path::before { position: absolute; top: 37px; bottom: 23px; left: 8px; width: 1px; background: var(--teal); content: ""; }
