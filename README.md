@@ -30,6 +30,10 @@ npm run build
 
 首次启用时，请在 GitHub 仓库的 Settings → Pages → Build and deployment 中将 Source 设为 GitHub Actions。推送 `master` 后，工作流会自动发布到 `https://we-used-to-be.github.io/Guanmo-site/`。
 
+导航栏 Star 数在 Actions 构建时使用内置 `GITHUB_TOKEN` 获取，通过 `NEXT_PUBLIC_GITHUB_STARS` 写入静态页面；浏览器不请求 GitHub API，也不接收 Token。本地未设置该变量时显示普通 GitHub 链接。获取失败或数据无效时，本次部署停止，线上版本不变。
+
+同一工作流还会在北京时间每周一、四 09:37 自动刷新 Star 数并重新部署，无需产生数据提交。定时任务仅运行于默认分支，GitHub 可能延迟执行；公开仓库连续 60 天无活动时，定时工作流会被自动停用，需要在 Actions 中重新启用。
+
 设计锁定与视觉验收记录见 [`DESIGN.md`](./DESIGN.md) 和 [`design-qa.md`](./design-qa.md)。
 
 官网 CTA 指向 Guanmo 主项目的 [GitHub](https://github.com/we-used-to-be/Guanmo-open) 与 [Windows Releases](https://github.com/we-used-to-be/Guanmo-open/releases/latest)。

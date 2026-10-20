@@ -4,8 +4,10 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { promoVideo } from "./promo-video-config";
+import { getCachedIntroVideo } from "./intro-video-cache";
 
 const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const introVideoUrl = `${assetBasePath}/assets/guanmo-intro.mp4?v=${process.env.NEXT_PUBLIC_INTRO_VIDEO_VERSION}`;
 const motionQuery = "(prefers-reduced-motion: reduce)";
 const subscribeMotion = (notify: () => void) => {
   const media = window.matchMedia(motionQuery);
@@ -29,6 +31,8 @@ export function PromoVideo() {
 
     let visible = false;
     let disposed = false;
+    let loading = false;
+    let objectUrl: string | undefined;
     const updatePlayback = () => {
       if (!visible || document.hidden) {
         video.pause();
@@ -36,7 +40,15 @@ export function PromoVideo() {
       }
       if (video.ended) return;
       if (!video.getAttribute("src")) {
-        video.src = `${assetBasePath}/assets/guanmo-intro.mp4`;
+        if (loading) return;
+        loading = true;
+        void getCachedIntroVideo(introVideoUrl).then((blob) => {
+          if (disposed) return;
+          if (blob) objectUrl = URL.createObjectURL(blob);
+          video.src = objectUrl ?? introVideoUrl;
+          updatePlayback();
+        });
+        return;
       }
       void video.play().catch(() => {
         // 离开视口导致的中断不应被视为自动播放失败。
@@ -54,6 +66,11 @@ export function PromoVideo() {
       observer.disconnect();
       document.removeEventListener("visibilitychange", updatePlayback);
       video.pause();
+      if (objectUrl) {
+        video.removeAttribute("src");
+        video.load();
+        URL.revokeObjectURL(objectUrl);
+      }
     };
   }, [reduced, opened, unavailable]);
 

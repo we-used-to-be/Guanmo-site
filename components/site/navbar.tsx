@@ -4,9 +4,13 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+const githubStars = process.env.NEXT_PUBLIC_GITHUB_STARS;
+const githubLabel = githubStars && /^\d+$/.test(githubStars)
+  ? `GitHub ☆ ${Number(githubStars).toLocaleString("en-US")}`
+  : "GitHub";
 const links = [
   { label: "功能", href: "#features" },
-  { label: "GitHub", href: "https://github.com/we-used-to-be/Guanmo-open", external: true },
+  { label: githubLabel, href: "https://github.com/we-used-to-be/Guanmo-open", external: true },
   { label: "下载", href: "https://github.com/we-used-to-be/Guanmo-open/releases/latest", external: true },
 ];
 const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
