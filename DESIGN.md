@@ -4,7 +4,7 @@
 
 - Register: `marketing` with an editorial, product-led reading narrative.
 - Anchor: warm editorial serif pacing, informed by the selected ImageGen direction and the generous one-screenshot rhythm observed in Magic Resume / magicv.art.
-- Signature move: one real Guanmo screenshot in the hero; every later capability is expressed through a single quiet motion device (progress rail, text selection, path reveal, syntax cursor, or FAQ disclosure).
+- Signature move: one real Guanmo product-video opening in the hero; every later capability is expressed through a single quiet motion device (progress rail, text selection, path reveal, syntax cursor, or FAQ disclosure).
 
 ## Token lock
 
@@ -35,4 +35,4 @@ Typography uses `Noto Serif SC` / Songti-style faces for display and `Noto Sans 
 
 ## Asset rule
 
-`public/assets/guanmo-main-warm.png` is the only product screenshot. The logo icon is used only as brand chrome and favicon. No placeholder UI or abstract AI illustration is used.
+The hero uses `public/assets/guanmo-intro.mp4` (a three-second opening) and `guanmo-intro-poster.jpg` (its final frame). It plays once in view, with a static poster for reduced motion or playback failure. A configured Bilibili video is loaded only after a click. The original product screenshot remains available. The logo icon is used only as brand chrome and favicon. No placeholder UI or abstract AI illustration is used.

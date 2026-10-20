@@ -1,6 +1,13 @@
 # Guanmo site
 
-观墨（Guanmo）开源 Markdown 阅读应用的独立官网。页面采用暖白纸张感、衬线大标题和滚动叙事：首屏展示一张真实软件截图，其余能力用轻量动效表达。
+观墨（Guanmo）开源 Markdown 阅读应用的独立官网。页面采用暖白纸张感、衬线大标题和滚动叙事：首屏展示产品视频开场，其余能力用轻量动效表达。
+
+## 首屏宣传视频
+
+- `public/assets/guanmo-intro.mp4`：从 `guanmo-native-v7.mp4` 裁取前 3 秒，1080p / 30fps / H.264，无音轨，已做 faststart 优化。进入可视区域后播放一次，结束停留末帧；离开视口或切换标签页暂停。
+- `public/assets/guanmo-intro-poster.jpg`：开场末帧封面。减少动态效果、自动播放失败时展示静态封面。
+- 完整版 B 站视频为 `BV1BRJd6rEqR`，集中配置在 `components/site/promo-video-config.ts`；`startSeconds: 3` 表示从 3 秒处起播。清空 BV 号可隐藏「继续观看」。
+- 点击「继续观看」才创建 B 站 iframe，此前不请求 B 站资源；完整版不进入网站仓库。桌面 Edge 已验证点击前无 B 站请求，点击后从约 3 秒处静音起播。外嵌画质由 B 站控制，手机端播放尚待实测。
 
 ## 本地运行
 
